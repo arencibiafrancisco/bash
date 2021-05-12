@@ -1,11 +1,13 @@
 # bash
 bash-scripting
 
-#USE INTRUCTIONS
+#USE INTRUCTIONS 
+<br>
 
--dbtype is the type of instance
--amount_instances number of db instances
--cluster name of the cluster
+-dbtype is the type of instance <br>
+-amount_instances number of db instances <br>
+-cluster name of the cluster <br>
 
 #./create-rds.sh -dbtype db.r5.4xlarge -amount_instances 5 -cluster main-perf-cluster
+<br>
 #./create-rds.sh -dbtype db.r5.4xlarge -amount_instances 5 -cluster perf-payment-cluster
