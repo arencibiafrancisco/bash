@@ -57,8 +57,6 @@ DB_PASS=
 set -euf -o pipefail
 
 
-
-
 #CREATE CLUSTER
 aws rds create-db-cluster --db-cluster-identifier $PERF_CLUSTER_IDENTIFIER --engine $ENGINE \
 --engine-version  $ENGINE_VERSION  --master-username $MASTER_USERNAME_MYSQL --master-user-password $MASTER_PASSWORD_MYSQL \
@@ -72,14 +70,9 @@ for (( contador=1; contador<=$amount_instances; contador++ ))
 
 
 
-
-
-
-
 #MYSQL SECTION
 
 #DB_HOST=$(aws rds describe-db-instances --db-instance-identifier $DB_INSTANCE_NAME-1|jq '.DBInstances[0] .Endpoint.Address')
-
 
 
 # USER
