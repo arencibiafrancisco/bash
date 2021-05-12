@@ -1,9 +1,12 @@
-
 #!/bin/bash
 #USE INTRUCTIONS
 #./create-rds.sh -dbtype db.r5.4xlarge -amount_instances 5 -cluster main-perf-cluster
 #./create-rds.sh -dbtype db.r5.4xlarge -amount_instances 5 -cluster perf-payment-cluster
-
+if [ $# -eq 0 ]
+  then
+    echo "No arguments supplied. Example: ./create-rds.sh -dbtype db.r5.4xlarge -amount_instances 5 -cluster main-perf-cluster"
+else
+    
 
 while [[ $# > 0 ]]  # Itero sobre la cantidad de parametros que se ingresaron.
 do
@@ -46,8 +49,8 @@ DB_INSTANCE_NAME="db-$RANDOM"
 SNAPSHOT_IDENTIFIER="db-dump-perf-request-$(date +%s)"
 DB_SUBNET_GROUP_NAME="cluster-frantest"
 VPC_SECURITY_GROUP_IDS="sg-0922db0e530bbda3f"
-MASTER_USERNAME_MYSQL="root"
-MASTER_PASSWORD_MYSQL="passwd"
+MASTER_USERNAME_MYSQL="scalefast"
+MASTER_PASSWORD_MYSQL="scalefast"
 DB_USER=
 DB_PASS=
 # See https://sipb.mit.edu/doc/safe-shell/
@@ -81,10 +84,12 @@ for (( contador=1; contador<=$amount_instances; contador++ ))
 
 # USER
 #echo "Updating User"
-## Set Password 
-#mysql -u $DB_USER -h $DB_HOST -p$DB_PASS mydb -e "UPDATE user SET pass='23h32h3h23h2h32h3h2', salt='463463746374364';"
+## Set Password and Salt
+#mysql -u $DB_USER -h $DB_HOST -p$DB_PASS pepita -e "UPDATE user SET pass='ef6857cfa873957671c854a1bc5a253847d14481a7d1e41446afae0ad8c2a241', salt='NXh+406wRCILJjfP2tbBpfAPnjS9JuIk';"
 
-## Set Email like: {user_id}@example.com
-#mysql -u $DB_USER -h $DB_HOST -p$DB_PASS mydb -e "UPDATE personal_info pi, user u SET pi.email = CONCAT(u.user_id,'@example.com') WHERE u.info_id=pi.info_id;"
+## Set Email like: {user_id}@scalefast.com
+#mysql -u $DB_USER -h $DB_HOST -p$DB_PASS pepita -e "UPDATE personal_info pi, user u SET pi.email = CONCAT(u.user_id,'@scalefast.com') WHERE u.info_id=pi.info_id;"
 
-#mysql -u $DB_USER -h $DB_HOST -p$DB_PASS mydb -e "UPDATE profesional_info pi, user u SET pi.email = CONCAT(u.user_id,'@example.com') WHERE u.info_id=pi.info_id;"
+#mysql -u $DB_USER -h $DB_HOST -p$DB_PASS pepita -e "UPDATE profesional_info pi, user u SET pi.email = CONCAT(u.user_id,'@scalefast.com') WHERE u.info_id=pi.info_id;"
+
+fi
