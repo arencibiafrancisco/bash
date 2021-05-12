@@ -46,8 +46,8 @@ DB_INSTANCE_NAME="db-$RANDOM"
 SNAPSHOT_IDENTIFIER="db-dump-perf-request-$(date +%s)"
 DB_SUBNET_GROUP_NAME="cluster-frantest"
 VPC_SECURITY_GROUP_IDS="sg-0922db0e530bbda3f"
-MASTER_USERNAME_MYSQL="scalefast"
-MASTER_PASSWORD_MYSQL="scalefast"
+MASTER_USERNAME_MYSQL="root"
+MASTER_PASSWORD_MYSQL="passwd"
 DB_USER=
 DB_PASS=
 # See https://sipb.mit.edu/doc/safe-shell/
