@@ -82,7 +82,7 @@ for (( contador=1; contador<=$amount_instances; contador++ ))
 # USER
 #echo "Updating User"
 ## Set Password 
-#mysql -u $DB_USER -h $DB_HOST -p$DB_PASS mydb -e "UPDATE user SET pass='ef6857cfa873957671c854a1bc5a253847d14481a7d1e41446afae0ad8c2a241', salt='NXh+406wRCILJjfP2tbBpfAPnjS9JuIk';"
+#mysql -u $DB_USER -h $DB_HOST -p$DB_PASS mydb -e "UPDATE user SET pass='23h32h3h23h2h32h3h2', salt='463463746374364';"
 
 ## Set Email like: {user_id}@example.com
 #mysql -u $DB_USER -h $DB_HOST -p$DB_PASS mydb -e "UPDATE personal_info pi, user u SET pi.email = CONCAT(u.user_id,'@example.com') WHERE u.info_id=pi.info_id;"
