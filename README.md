@@ -9,7 +9,7 @@ bash-scripting
 -cluster name of the cluster <br>
 
 
-USE EXAMPLES
+USE EXAMPLES <br>
 #./create-rds.sh -dbtype db.r5.4xlarge -amount_instances 5 -cluster main-perf-cluster
 <br>
 #./create-rds.sh -dbtype db.r5.4xlarge -amount_instances 5 -cluster perf-payment-cluster
