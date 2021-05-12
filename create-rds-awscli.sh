@@ -62,7 +62,7 @@ aws rds create-db-cluster --db-cluster-identifier $PERF_CLUSTER_IDENTIFIER --eng
 --engine-version  $ENGINE_VERSION  --master-username $MASTER_USERNAME_MYSQL --master-user-password $MASTER_PASSWORD_MYSQL \
 --db-subnet-group-name $DB_SUBNET_GROUP_NAME --vpc-security-group-ids $VPC_SECURITY_GROUP_IDS
 
-##crear instancias
+##CREATE INSTANCES
 for (( contador=1; contador<=$amount_instances; contador++ ))
     do
     aws rds create-db-instance --db-instance-identifier $DB_INSTANCE_NAME-$contador      --db-cluster-identifier $PERF_CLUSTER_IDENTIFIER --engine $ENGINE --db-instance-class $PERF_DB_CLASS
