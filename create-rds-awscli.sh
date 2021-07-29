@@ -12,9 +12,9 @@ while [[ $# > 0 ]]  # Itero sobre la cantidad de parametros que se ingresaron.
 do
     case "$1" in
         -dbtype  )
-            shift  # Una vez que se encuentra el patron "-p1" o "--param1"
+            shift  # Una vez que se encuentra el patron "-dbtype" "
                    # Se recorre el indice del array de argumentos.
-            declare dbtype="$1"  # Entonces el siguiente valor de entrada se almacena en la variable "param1"
+            declare dbtype="$1"  # Entonces el siguiente valor de entrada se almacena en la variable "dbtype"
             shift  # Y se vuelve a recorrer para proceder con este método.
         ;;
         -amount_instances )
